@@ -25,7 +25,24 @@ Built on existing Hub & Spoke network architecture.
 - *Spoke1 VNet:* 10.1.0.0/16 (Workloads)
 - *Spoke2 VNet:* 10.2.0.0/16 (Management)
 - *DNS:* Private zones linked to all VNets
+## Security Results
+-3 Private Endpoints deployed
+- 4 Private DNS Zones configured
+- Zero public internet exposure
+- All logs-->centralized Log Analytics
+- TLS 1.2 enforced on all services
+- SQL credentials secured in Key Vault
 
+## Technologies Used
+- Azure Private Endpoints
+- Azure Private DNS Zones
+- Azure Key Vault
+- Azure Storage Account
+- Azure SQL Database
+- Log Analytics Workspace
+- PowerShell/ Az Module
+## Author
+## Uzma Sami Azure Security Engineer | AZ-104 | AZ-500
 ## Deployment Order
 ```powershell
 # Phase 1: Network prep
