@@ -42,7 +42,7 @@ Built on existing Hub & Spoke network architecture.
 - Log Analytics Workspace
 - PowerShell/ Az Module
 ## Author
-## Uzma Sami Azure Security Engineer | AZ-104 | AZ-500
+## Uzma Shabbir Azure Security Engineer | AZ-104 | AZ-500
 ## Deployment Order
 ```powershell
 # Phase 1: Network prep
