@@ -6,7 +6,7 @@ Complete Private Endpoint implementation securing
 Azure PaaS services from public internet access.
 Built on existing Hub & Spoke network architecture.
 
-*Engineer:* Uzma Sami | AZ-104 | AZ-500  
+*Engineer:* Uzma Sami 
 *Region:* UK South  
 *Architecture:* Hub & Spoke with dedicated PE subnet
 
