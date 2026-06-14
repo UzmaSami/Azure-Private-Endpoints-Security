@@ -2,19 +2,6 @@
 # 🔐 Azure Private Endpoints Security
 
 ## Overview
-Complete Private Endpoint implementation securing 
-Azure PaaS services from public internet access.
-Built on existing Hub & Spoke network architecture.
-
-*Engineer:* Uzma Sami 
-*Region:* UK South  
-*Architecture:* Hub & Spoke with dedicated PE subnet
-
-## Architecture
-![Architecture](docs/architecture-diagram.png)
-
-
-## Overview
 
 This project documents the design and
 implementation of private network
@@ -97,6 +84,8 @@ public internet.
 
 ## Architecture
 
+![Architecture](docs/architecture-diagram.png)
+---
 
 AZURE VIRTUAL NETWORK
 (Integrated with Hub-Spoke from Project 3)
@@ -106,39 +95,39 @@ rg-p4-data-security-uks
 - │
 - ├── PRIVATE ENDPOINTS SUBNET
 - │   snet-private-endpoints (10.1.4.0/24)
- │   NSG: deny-all inbound baseline
- │   │
- │   ├── pe-keyvault-uzmasami
- │   │   Private IP: 10.1.4.4
- │   │   Target: kv-security-uzmasami
- │   │   Subresource: vault
- │   │
- │   ├── pe-storage-uzmasami
- │   │   Private IP: 10.1.4.5
- │   │   Target: stuzmasamisecurity
- │   │   Subresource: blob
- │   │
- │   └── pe-sql-uzmasami
- │       Private IP: 10.1.4.6
- │       Target: sql-uzmasami-2026
- │       Subresource: sqlServer
- │
- ├── PRIVATE DNS ZONES
- │   (Linked to VNet for name resolution)
- │   │
- │   ├── privatelink.vaultcore.azure.net
- │   │   A record: kv-security-uzmasami
- │   │   → 10.1.4.4 (private IP)
- │   │
- │   ├── privatelink.blob.core.windows.net
- │   │   A record: stuzmasamisecurity
- │   │   → 10.1.4.5 (private IP)
- │   │
- │   └── privatelink.database.windows.net
- │       A record: sql-uzmasami-2026
- │       → 10.1.4.6 (private IP)
- │
- └── PAAS SERVICES
+- │   NSG: deny-all inbound baseline
+- │   │
+- │   ├── pe-keyvault-uzmasami
+- │   │   Private IP: 10.1.4.4
+- │   │   Target: kv-security-uzmasami
+- │   │   Subresource: vault
+- │   │
+- │   ├── pe-storage-uzmasami
+- │   │   Private IP: 10.1.4.5
+- │   │   Target: stuzmasamisecurity
+- │   │   Subresource: blob
+- │   │
+- │   └── pe-sql-uzmasami
+- │       Private IP: 10.1.4.6
+- │       Target: sql-uzmasami-2026
+- │       Subresource: sqlServer
+- │
+- ├── PRIVATE DNS ZONES
+- │   (Linked to VNet for name resolution)
+- │   │
+- │   ├── privatelink.vaultcore.azure.net
+- │   │   A record: kv-security-uzmasami
+- │   │   → 10.1.4.4 (private IP)
+- │   │
+- │   ├── privatelink.blob.core.windows.net
+- │   │   A record: stuzmasamisecurity
+- │   │   → 10.1.4.5 (private IP)
+- │   │
+- │   └── privatelink.database.windows.net
+- │       A record: sql-uzmasami-2026
+- │       → 10.1.4.6 (private IP)
+- │
+- └── PAAS SERVICES
   -   (Public access disabled)
   -  │
   -  ├── Key Vault
