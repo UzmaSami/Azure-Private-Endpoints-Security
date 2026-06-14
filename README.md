@@ -103,43 +103,43 @@ AZURE VIRTUAL NETWORK
 ═══════════════════════════════════════════════
 
 rg-p4-data-security-uks
--│
--├── PRIVATE ENDPOINTS SUBNET
--│   snet-private-endpoints (10.1.4.0/24)
--│   NSG: deny-all inbound baseline
--│   │
--│   ├── pe-keyvault-uzmasami
--│   │   Private IP: 10.1.4.4
--│   │   Target: kv-security-uzmasami
--│   │   Subresource: vault
--│   │
--│   ├── pe-storage-uzmasami
--│   │   Private IP: 10.1.4.5
--│   │   Target: stuzmasamisecurity
--│   │   Subresource: blob
--│   │
--│   └── pe-sql-uzmasami
--│       Private IP: 10.1.4.6
--│       Target: sql-uzmasami-2026
--│       Subresource: sqlServer
--│
--├── PRIVATE DNS ZONES
--│   (Linked to VNet for name resolution)
--│   │
--│   ├── privatelink.vaultcore.azure.net
--│   │   A record: kv-security-uzmasami
--│   │   → 10.1.4.4 (private IP)
--│   │
--│   ├── privatelink.blob.core.windows.net
--│   │   A record: stuzmasamisecurity
--│   │   → 10.1.4.5 (private IP)
--│   │
--│   └── privatelink.database.windows.net
--│       A record: sql-uzmasami-2026
--│       → 10.1.4.6 (private IP)
--│
--└── PAAS SERVICES
- -   (Public access disabled)
+- │
+- ├── PRIVATE ENDPOINTS SUBNET
+- │   snet-private-endpoints (10.1.4.0/24)
+ │   NSG: deny-all inbound baseline
+ │   │
+ │   ├── pe-keyvault-uzmasami
+ │   │   Private IP: 10.1.4.4
+ │   │   Target: kv-security-uzmasami
+ │   │   Subresource: vault
+ │   │
+ │   ├── pe-storage-uzmasami
+ │   │   Private IP: 10.1.4.5
+ │   │   Target: stuzmasamisecurity
+ │   │   Subresource: blob
+ │   │
+ │   └── pe-sql-uzmasami
+ │       Private IP: 10.1.4.6
+ │       Target: sql-uzmasami-2026
+ │       Subresource: sqlServer
+ │
+ ├── PRIVATE DNS ZONES
+ │   (Linked to VNet for name resolution)
+ │   │
+ │   ├── privatelink.vaultcore.azure.net
+ │   │   A record: kv-security-uzmasami
+ │   │   → 10.1.4.4 (private IP)
+ │   │
+ │   ├── privatelink.blob.core.windows.net
+ │   │   A record: stuzmasamisecurity
+ │   │   → 10.1.4.5 (private IP)
+ │   │
+ │   └── privatelink.database.windows.net
+ │       A record: sql-uzmasami-2026
+ │       → 10.1.4.6 (private IP)
+ │
+ └── PAAS SERVICES
+  -   (Public access disabled)
   -  │
   -  ├── Key Vault
 -    │   Public network access: DISABLED
